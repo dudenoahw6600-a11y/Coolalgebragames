@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Adventure</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom scrollbar for a more thematic feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #231d4b; /* Dark purple */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ec4899; /* Pink */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f472b6; /* Lighter pink */
+        }
+    </style>
+    <script>
+        // Configuration for Tailwind
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Extending the palette to make your colors easier to use
+                        theme: {
+                            purple: '#4c1d95', // deep purple
+                            // FIX: Added quotes around property names with hyphens
+                            'purple-light': '#6d28d9', 
+                            pink: '#ec4899',
+                            'pink-light': '#f9a8d4',
+                            red: '#ef4444',
+                            'red-light': '#f87171',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gradient-to-br from-[#1e1b4b] via-[#312e81] to-[#4c1d95] text-pink-100 min-h-screen antialiased">
+
+    <!-- Header Navigation -->
+    <nav class="bg-purple-900/50 backdrop-blur-md sticky top-0 z-50 border-b border-purple-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-white">
+                        <span class="text-pink-400">{</span> Algebra Adventure <span class="text-pink-400">}</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="bg-purple-800 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#lessons" class="text-pink-200 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Lessons</a>
+                        <a href="#puzzles" class="text-pink-200 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Puzzles</a>
+                        <a href="#game" class="text-pink-200 hover:bg-purple-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Python Game</a>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button (optional) -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="bg-purple-800 inline-flex items-center justify-center p-2 rounded-md text-pink-300 hover:text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-purple-800 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon for menu (hamburger) -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Hero Section -->
+        <section id="home" class="text-center mb-16 rounded-lg bg-purple-800/30 backdrop-blur-sm border border-purple-700/50 p-10">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Welcome to <span class="text-pink-400">Algebra Adventure</span>!</h1>
+            <p class="text-xl text-pink-200 mb-8">Your new home for exploring variables, equations, and functions.</p>
+            <a href="#lessons" class="bg-pink-600 text-white hover:bg-pink-700 font-bold py-3 px-6 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-xl">
+                Start Learning
+            </a>
+        </section>
+
+        <!-- Lessons Section -->
+        <section id="lessons" class="mb-16">
+            <h2 class="text-3xl font-bold text-white mb-6">Key Concepts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-purple-800/60 backdrop-blur-sm border border-purple-700 rounded-lg shadow-lg p-6 hover:shadow-pink-500/20 hover:border-pink-500 transition-all">
+                    <h3 class="text-2xl font-semibold text-pink-300 mb-3">Variables</h3>
+                    <p class="text-pink-200">Learn all about the mysterious 'x' and 'y' and how they represent unknown numbers.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-purple-800/60 backdrop-blur-sm border border-purple-700 rounded-lg shadow-lg p-6 hover:shadow-pink-500/20 hover:border-pink-500 transition-all">
+                    <h3 class="text-2xl font-semibold text-pink-300 mb-3">Equations</h3>
+                    <p class="text-pink-200">Master the art of balancing equations to find the solution. Like <code class="text-pink-400 bg-purple-900 px-2 py-1 rounded">2x + 5 = 15</code>!</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-purple-800/60 backdrop-blur-sm border border-purple-700 rounded-lg shadow-lg p-6 hover:shadow-pink-500/20 hover:border-pink-500 transition-all">
+                    <h3 class="text-2xl font-semibold text-pink-300 mb-3">Functions</h3>
+                    <p class="text-pink-200">Discover how functions like <code class="text-pink-400 bg-purple-900 px-2 py-1 rounded">f(x) = x²</code> create predictable patterns.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Puzzles Section (NEW) -->
+        <section id="puzzles" class="mb-16">
+            <h2 class="text-3xl font-bold text-white mb-6">Solve the Puzzles!</h2>
+            <p class="text-lg text-pink-200 mb-8">Put your new skills to the test with these quick challenges. Hover over the solution button to reveal the answer!</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Puzzle 1: Linear Equation -->
+                <div class="bg-purple-800/60 backdrop-blur-sm border border-red-500 rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold text-red-400 mb-3">Puzzle 1: Find X</h3>
+                    <p class="text-pink-100 text-xl font-bold mb-4">
+                        If $3x + 7 = 25$, what is the value of $x$?
+                    </p>
+                    <div class="relative group">
+                        <button class="w-full bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 hover:bg-red-700">
+                            Show Solution
+                        </button>
+                        <div class="absolute inset-0 flex items-center justify-center bg-red-900/90 text-white text-2xl font-extrabold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            $x = 6$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Puzzle 2: Substitution -->
+                <div class="bg-purple-800/60 backdrop-blur-sm border border-red-500 rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold text-red-400 mb-3">Puzzle 2: Substitute</h3>
+                    <p class="text-pink-100 text-xl font-bold mb-4">
+                        If $a=5$ and $b = 2a - 3$, what is $b^2$?
+                    </p>
+                    <div class="relative group">
+                        <button class="w-full bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 hover:bg-red-700">
+                            Show Solution
+                        </button>
+                        <div class="absolute inset-0 flex items-center justify-center bg-red-900/90 text-white text-2xl font-extrabold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            $b^2 = 49$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Puzzle 3: Function Evaluation -->
+                <div class="bg-purple-800/60 backdrop-blur-sm border border-red-500 rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-semibold text-red-400 mb-3">Puzzle 3: The Function</h3>
+                    <p class="text-pink-100 text-xl font-bold mb-4">
+                        If $f(x) = x^2 + 2x + 1$, what is $f(5)$?
+                    </p>
+                    <div class="relative group">
+                        <button class="w-full bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 hover:bg-red-700">
+                            Show Solution
+                        </button>
+                        <div class="absolute inset-0 flex items-center justify-center bg-red-900/90 text-white text-2xl font-extrabold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            $f(5) = 36$
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Python Game Section -->
+        <section id="game" class="bg-purple-900/70 backdrop-blur-lg border border-purple-700 rounded-lg shadow-2xl p-6 md:p-8">
+            <h2 class="text-3xl font-bold text-white mb-4">Python Game Zone</h2>
+            <p class="text-lg text-pink-200 mb-6">Showcase your Python creations here!</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Column 1: Python Code Display -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-pink-300 mb-3">Your Python Script</h3>
+                    <p class="text-sm text-red-300 mb-3">(Note: This is a read-only display. Browsers can't run Python code directly.)</p>
+                    <div class="bg-black/70 rounded-lg overflow-hidden shadow-inner">
+                        <div class="bg-gray-800 text-gray-300 text-sm px-4 py-2 font-mono">
+                            algebra_sort_game.py 
+                        </div>
+                        <pre class="p-4 overflow-x-auto"><code class="language-python text-sm font-mono text-white">
+<span class="text-cyan-400">import</span> random
+<span class="text-cyan-400">import</span> time
+
+<span class="text-comment-500"># --- 1. Game Data Definitions ---</span>
+
+<span class="text-comment-500"># The categories the user must sort examples into</span>
+<span class="text-yellow-400">CATEGORIES</span> = [
+    <span class="text-red-400">"Monomial"</span>, 
+    <span class="text-red-400">"Binomial"</span>, 
+    <span class="text-red-400">"Trinomial"</span>, 
+    <span class="text-red-400">"Equation"</span>, 
+    <span class="text-red-400">"Inequality"</span>,
+    <span class="text-red-400">"Constant"</span>
+]
+
+<span class="text-comment-500"># List of all possible examples (the deck)</span>
+<span class="text-comment-500"># Format: (Example string, Correct Category)</span>
+<span class="text-yellow-400">ALL_CARDS</span> = [
+    <span class="text-comment-500"># Monomials (Single term)</span>
+    (<span class="text-red-400">"5x³"</span>, <span class="text-red-400">"Monomial"</span>),
+    (<span class="text-red-400">"y"</span>, <span class="text-red-400">"Monomial"</span>),
+    (<span class="text-red-400">"-12a²b"</span>, <span class="text-red-400">"Monomial"</span>),
+    (<span class="text-red-400">"1/3 z"</span>, <span class="text-red-400">"Monomial"</span>),
+    <span class="text-comment-500"># Binomials (Two terms)</span>
+    (<span class="text-red-400">"x + 9"</span>, <span class="text-red-400">"Binomial"</span>),
+    (<span class="text-red-400">"2a - 5b"</span>, <span class="text-red-400">"Binomial"</span>),
+    (<span class="text-red-400">"y² + 4y"</span>, <span class="text-red-400">"Binomial"</span>),
+    <span class="text-comment-500"># Trinomials (Three terms)</span>
+    (<span class="text-red-400">"a² + 2ab + b²"</span>, <span class="text-red-400">"Trinomial"</span>),
+    (<span class="text-red-400">"x³ - 4x + 1"</span>, <span class="text-red-400">"Trinomial"</span>),
+    (<span class="text-red-400">"3y² + 7y - 2"</span>, <span class="text-red-400">"Trinomial"</span>),
+    <span class="text-comment-500"># Equations (Has an '=' sign)</span>
+    (<span class="text-red-400">"4x - 1 = 15"</span>, <span class="text-red-400">"Equation"</span>),
+    (<span class="text-red-400">"a + b = c"</span>, <span class="text-red-400">"Equation"</span>),
+    (<span class="text-red-400">"y/2 = 10"</span>, <span class="text-red-400">"Equation"</span>),
+    <span class="text-comment-500"># Inequalities (Has <, >, ≤, or ≥)</span>
+    (<span class="text-red-400">"3z + 1 > 7"</span>, <span class="text-red-400">"Inequality"</span>),
+    (<span class="text-red-400">"x - 5 ≤ 20"</span>, <span class="text-red-400">"Inequality"</span>),
+    (<span class="text-red-400">"2y < 12"</span>, <span class="text-red-400">"Inequality"</span>),
+    <span class="text-comment-500"># Constants (Number without a variable)</span>
+    (<span class="text-red-400">"10"</span>, <span class="text-red-400">"Constant"</span>),
+    (<span class="text-red-400">"-3.5"</span>, <span class="text-red-400">"Constant"</span>),
+    (<span class="text-red-400">"π"</span>, <span class="text-red-400">"Constant"</span>),
+]
+
+<span class="text-comment-500"># --- 2. Main Game Function ---</span>
+
+<span class="text-cyan-400">def</span> <span class="text-green-400">play_game</span>():
+    <span class="text-red-400">"""
+    This function runs the main game loop.
+    It includes instructions, the sorting test, and final scoring.
+    """</span>
+
+    <span class="text-cyan-400">while</span> <span class="text-blue-400">True</span>: <span class="text-comment-500"># Outer loop for playing multiple rounds</span>
+        <span class="text-comment-500"># Instructions for play</span>
+        <span class="text-cyan-400">print</span>(<span class="text-red-400">"--- 🎮 Algebraic Vocabulary Sort 🎮 ---"</span>)
+        <span class="text-cyan-400">print</span>(<span class="text-red-400">"\nWelcome! This game is based on the 'Algebra Sort' challenge."</span>)
+        <span class="text-cyan-400">print</span>(<span class="text-green-400">f"You will be shown 10 algebraic examples, one by one."</span>)
+        <span class="text-cyan-400">print</span>(<span class="text-red-400">"Your job is to categorize each one as a:"</span>)
+
+        <span class="text-comment-500"># Display category options</span>
+        <span class="text-cyan-400">for</span> i, category <span class="text-cyan-400">in</span> <span class="text-blue-400">enumerate</span>(<span class="text-yellow-400">CATEGORIES</span>, <span class="text-number-400">1</span>):
+            <span class="text-cyan-400">print</span>(<span class="text-green-400">f"  {i}. {category}"</span>)
+
+        <span class="text-cyan-400">print</span>(<span class="text-red-400">"\nLet's see how fast you can sort them!"</span>)
+        <span class="text-cyan-400">print</span>(<span class="text-red-400">"-------------------------------------------------"</span>)
+
+        <span class="text-comment-500"># Wait for user to start</span>
+        <span class="text-cyan-400">input</span>(<span class="text-red-400">"Press Enter to start the timer and begin..."</span>)
+        <span class="text-cyan-400">print</span>(<span class="text-red-400">"\nTimer started! Here's your first card:\n"</span>)
+
+        <span class="text-comment-500"># Prepare the deck for this round</span>
+        random.shuffle(<span class="text-yellow-400">ALL_CARDS</span>)
+        <span class="text-comment-500"># Draw 10 cards for the game</span>
+        <span class="text-yellow-400">game_deck</span> = <span class="text-yellow-400">ALL_CARDS</span>[:<span class="text-number-400">10</span>]
+
+        <span class="text-yellow-400">score</span> = <span class="text-number-400">0</span>
+        <span class="text-yellow-400">start_time</span> = time.time() <span class="text-comment-500"># Start the timer</span>
+
+        <span class="text-comment-500"># Loop through the 10 chosen cards</span>
+        <span class="text-cyan-400">for</span> i, (example, correct_category) <span class="text-cyan-400">in</span> <span class="text-blue-400">enumerate</span>(<span class="text-yellow-400">game_deck</span>, <span class="text-number-400">1</span>):
+            <span class="text-cyan-400">print</span>(<span class="text-green-400">f"\n--- Card {i} of 10 ---"</span>)
+            <span class="text-cyan-400">print</span>(<span class="text-green-400">f"Example:  ** {example} **"</span>)
+
+            <span class="text-comment-500"># Display category options again for clarity</span>
+            <span class="text-cyan-400">for</span> j, category <span class="text-cyan-400">in</span> <span class="text-blue-400">enumerate</span>(<span class="text-yellow-400">CATEGORIES</span>, <span class="text-number-400">1</span>):
+                <span class="text-cyan-400">print</span>(<span class="text-green-400">f"  {j}. {category}"</span>)
+
+            <span class="text-yellow-400">choice</span> = <span class="text-number-400">0</span>
+            <span class="text-comment-500"># Loop to get valid user input</span>
+            <span class="text-cyan-400">while</span> <span class="text-blue-400">True</span>:
+                <span class="text-cyan-400">try</span>:
+                    <span class="text-yellow-400">choice_input</span> = <span class="text-cyan-400">input</span>(<span class="text-red-400">"Your choice (1-6): "</span>)
+                    <span class="text-yellow-400">choice</span> = <span class="text-blue-400">int</span>(<span class="text-yellow-400">choice_input</span>)
+                    <span class="text-cyan-400">if</span> <span class="text-number-400">1</span> <= <span class="text-yellow-400">choice</span> <= <span class="text-blue-400">len</span>(<span class="text-yellow-400">CATEGORIES</span>):
+                        <span class="text-cyan-400">break</span>
+                    <span class="text-cyan-400">else</span>:
+                        <span class="text-cyan-400">print</span>(<span class="text-red-400">"Invalid choice. Please enter a number between 1 and 6."</span>)
+                <span class="text-cyan-400">except</span> <span class="text-blue-400">ValueError</span>:
+                    <span class="text-cyan-400">print</span>(<span class="text-red-400">"Invalid input. Please enter a number."</span>)
+
+            <span class="text-comment-500"># Check the answer</span>
+            <span class="text-yellow-400">user_category</span> = <span class="text-yellow-400">CATEGORIES</span>[<span class="text-yellow-400">choice</span> - <span class="text-number-400">1</span>]
+
+            <span class="text-cyan-400">if</span> <span class="text-yellow-400">user_category</span> == <span class="text-yellow-400">correct_category</span>:
+                <span class="text-cyan-400">print</span>(<span class="text-green-400">f"✅ Correct! '{example}' is a(n) {correct_category}!"</span>)
+                <span class="text-yellow-400">score</span> += <span class="text-number-400">1</span> <span class="text-comment-500"># Increment score for correct answer</span>
+            <span class="text-cyan-400">else</span>:
+                <span class="text-cyan-400">print</span>(<span class="text-green-400">f"❌ Incorrect. '{example}' is not a(n) {user_category}."</span>)
+                <span class="text-cyan-400">print</span>(<span class="text-green-400">f"The correct answer is: {correct_category}"</span>)
+
+        <span class="text-comment-500"># After the loop finishes</span>
+        <span class="text-yellow-400">end_time</span> = time.time() <span class="text-comment-500"># Get the end time</span>
+        <span class="text-yellow-400">elapsed_time</span> = <span class="text-yellow-400">end_time</span> - <span class="text-yellow-400">start_time</span> <span class="text-comment-500"># Calculate elapsed time</span>
+
+        <span class="text-cyan-400">print</span>(<span class="text-red-400">"\n--- Game Over ---"</span>)
+        <span class="text-cyan-400">print</span>(<span class="text-green-400">f"You got {score} out of 10 correct!"</span>)
+        <span class="text-cyan-400">print</span>(<span class="text-green-400">f"Time taken: {elapsed_time:.2f} seconds"</span>)
+
+        <span class="text-comment-500"># Ask user to play again</span>
+        <span class="text-yellow-400">play_again</span> = <span class="text-cyan-400">input</span>(<span class="text-red-400">"Play again? (yes/no): "</span>).lower()
+        <span class="text-cyan-400">if</span> <span class="text-yellow-400">play_again</span> != <span class="text-red-400">'yes'</span>:
+            <span class="text-cyan-400">break</span> <span class="text-comment-500"># Exit the outer loop if user doesn't want to play again</span>
+            
+<span class="text-comment-500"># --- 3. Script Entry Point ---</span>
+<span class="text-cyan-400">if</span> __name__ == <span class="text-red-400">'__main__'</span>:
+    <span class="text-green-400">play_game</span>()
+                        </code></pre>
+                    </div>
+                </div>
+
+                <!-- Column 2: Interactive Game Placeholder -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-pink-300 mb-3">Interactive Game</h3>
+                    <p class="text-sm text-pink-200 mb-3">To make this playable, we'd rebuild the logic in JavaScript or use a tool like Pyodide to run the Python code in the browser.</p>
+                    <div class="w-full h-80 bg-purple-800/50 rounded-lg border-2 border-dashed border-red-500 flex items-center justify-center">
+                        <p class="text-gray-400 text-lg">
+                            Interactive Game Window
+                        </p>
+                    </div>
+                    <button class="mt-4 w-full bg-red-600 text-white hover:bg-red-700 font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
+                        Play Game (Placeholder)
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 border-t border-purple-700/50 mt-16">
+        <p class="text-purple-300">&copy; 2025 Algebra Adventure. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
